@@ -1,7 +1,10 @@
 package com.minos;
 
+import java.util.Objects;
+
 /**
  * 歌曲类
+ *
  * @author minos
  */
 public class Song {
@@ -43,11 +46,25 @@ public class Song {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Song song = (Song) o;
+        return Objects.equals(id, song.id) &&
+                Objects.equals(name, song.name) &&
+                Objects.equals(singer, song.singer);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, singer);
+    }
+
+    @Override
     public String toString() {
-        return "Song{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", singer='" + singer + '\'' +
-                '}';
+        return "歌曲信息:" +
+                " id-" + id +
+                " name-" + name +
+                " singer-" + singer;
     }
 }
