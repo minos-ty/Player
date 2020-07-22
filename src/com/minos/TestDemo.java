@@ -1,6 +1,6 @@
 package com.minos;
 
-public class Test {
+public class TestDemo {
 
     //对歌曲类Song进行测试
     public static void testSong() {
@@ -107,7 +107,7 @@ public class Test {
     public static void main(String[] args) {
 //        Test.testSong();
 //        Test.testPlayList();
-        Test.testPlayListCollection();
+        TestDemo.testPlayListCollection();
     }
 }
 
